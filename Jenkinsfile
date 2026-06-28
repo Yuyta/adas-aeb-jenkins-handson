@@ -4,9 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                echo 'Checking out source code...'
-                git branch: 'main',
-                    url: 'https://github.com/<ユーザー名>/aeb-jenkins-handson.git'
+                echo 'Source code has already been checked out by Pipeline script from SCM.'
             }
         }
   
