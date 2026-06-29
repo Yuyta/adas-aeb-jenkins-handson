@@ -13,7 +13,6 @@ def test_warning_brake():
     # 警告域（TTC = 3m / 2m/s = 1.5s）
     # 緊急ブレーキではないが、一定以上のブレーキがかかること
     level = calculate_brake_level(3.0, 2.0)
-    
     assert level == pytest.approx(0.77, abs=0.01)
 
 
