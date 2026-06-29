@@ -34,17 +34,20 @@ def test_moving_away():
     # 相対速度が0（並走状態）でもふれーきを書けないこと
     assert calculate_brake_level(5.0, 0.0) == 0.0
 
+
 def test_high_speed_approach():
     # TTCは2sと比較的長いが、高速で接近しているため危険と判断し強いブレーキがかかること
     level = calculate_brake_level(40.0, 20.0)
 
     assert level > 0.8
 
+
 def test_brake_level_range():
     # ブレーキ強度は常に0.0~1.0の範囲内であること
     level = calculate_brake_level(5.0, 3.0)
 
     assert 0.0 <= level <= 1.0
+
 
 def test_ttc_boundary():
     # TTC = 0.8sでは緊急ブレーキ(1.0)にはならないこと
