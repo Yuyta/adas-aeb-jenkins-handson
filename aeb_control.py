@@ -28,7 +28,7 @@ def calculate_brake_level(distance: float, relative_speed: float) -> float:
 
     # ---- 緊急フルブレーキ判定 ----
     # TTCが極端に短い場合は躊躇せず最大制動
-    if ttc < 0.8:
+    if ttc <= 0.8:
         return 1.0
 
     # ---- 危険度評価 ----
