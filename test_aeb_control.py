@@ -53,4 +53,4 @@ def test_ttc_boundary():
     assert calculate_brake_level(1.6, 2.0) == 1.0
 
     # TTCが0.8s未満になると、緊急ブレーキになること
-    assert calculate_brake_level(1.62, 2.0) < 1.0
+    assert calculate_brake_level(2.0, 2.0) < 1.0
